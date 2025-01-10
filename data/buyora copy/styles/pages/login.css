@@ -1,0 +1,135 @@
+body {
+    padding: 20px;
+    background-color: rgba(128, 128, 128, 0.185);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial;
+
+}
+
+.mainbody {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* width: 60%; */
+    overflow: hidden;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    /* aspect-ratio: 1/0.7; */
+    width: max-content;
+    
+     height: max-content;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20%;
+    /* background-color: blue; */
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.logo {
+    width: 100%;
+
+}
+
+.logo img {
+    width: 50%;
+    max-width: 100px;
+    /* margin-bottom: 50px; */
+
+}
+
+.logo p:nth-child(2) {
+    /* font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial; */
+    font-weight: bolder;
+    font-size: 2vw;
+}
+
+.logo p:nth-child(3) {
+    font-size: 1em;
+    color: rgba(0, 0, 0, 0.795);
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    max-width: 500px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+}
+
+input::placeholder {
+    padding: 5px;
+}
+
+button {
+    padding: 10px 25px;
+    border-radius: 5px;
+    background-color: rgb(144, 238, 214);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in;
+    
+}
+
+button:hover {
+    background-color: rgba(144, 238, 144, 0.719);
+}
+
+.image  {
+    background-image: url("../../login images/login page.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+a{
+    color: lightgreen;
+    text-decoration: initial;
+    font-weight: bold;
+    text-wrap: no-wrap;
+
+}
+.dont-have-account{
+    font-size: 12px;
+    /* font-family: ; */
+    
+}
+@media (max-width: 800px) {
+    .image{
+        display: none;
+    }
+    .mainbody{
+        grid-template-columns: 1fr;
+        height: 70%
+    }
+    .login{
+        height:max-content ;
+        /* width: max-content; */
+    }
+    .logo p:nth-child(2) {
+        font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial;
+        font-weight: bolder;
+        font-size: 15px;
+    }
+    
+    .logo p:nth-child(3) {
+        font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial;
+        font-size: 10px;
+        color: rgba(0, 0, 0, 0.795);
+    }
+}

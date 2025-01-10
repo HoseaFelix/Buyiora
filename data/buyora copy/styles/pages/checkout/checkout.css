@@ -1,0 +1,350 @@
+.main {
+  max-width: 1100px;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  margin-top: 140px;
+  margin-bottom: 100px;
+
+  /* margin-left: auto;
+     margin-right auto;
+     Is a trick for centering an element horizontally
+     without needing a container. */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-title {
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+
+.checkout-grid {
+  display: grid;
+  /* Here, 1fr means the first column will take
+     up the remaining space in the grid. */
+  grid-template-columns: 1fr 350px;
+  column-gap: 12px;
+
+  /* Use align-items: start; to prevent the elements
+     in the grid from stretching vertically. */
+  align-items: start;
+}
+
+.payment-box{
+ min-width: 500px;
+height: max-content;
+border: 2px solid rgba(0, 0, 0, 0.616);
+margin: auto;
+position: absolute;
+top: 50%;
+left: 50%;
+
+transform: translateY(-50%) translateX(-50%);
+
+display: none;
+flex-direction: column;
+background-color: white;
+color: black;
+padding: 20px;
+gap: 10px;
+animation: dynamicDisplay 3s forwards;
+box-shadow: 0 0 15px 50px rgba(0, 0, 0, 0.1);
+}
+.paying{
+  
+  display: flex;
+}
+.payment-box p{
+  color: rgb(54, 54, 54);
+  font-weight: bold;
+  font-size: 18px;
+}
+@media (max-width: 1000px) {
+  .main {
+    max-width: 500px;
+  }
+
+  .checkout-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cart-item-container,
+.payment-summary {
+  border: 1px solid rgb(222, 222, 222);
+  border-radius: 4px;
+  padding: 18px;
+}
+
+.cart-item-container {
+  margin-bottom: 12px;
+}
+.payment-box{
+  max-width: 100%;
+  width: 30%;
+ 
+  
+}
+
+.payment-summary {
+  padding-bottom: 5px;
+}
+@keyframes dynamicDisplay{
+  0%{
+    opacity: 0;
+    
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.paying{
+  display: flex;
+}
+.credit-card{
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  align-items: center;
+  gap: 15px;
+}
+.card-image-container img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+form{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+  row-gap: 10px;
+  box-sizing: border-box;
+  
+}
+.payment-box form input{
+  padding: 10px;
+  
+  border-radius: 5px;
+  border: 1px solid rgb(222, 222, 222);
+
+}
+label{
+  color: rgb(54, 54, 54);
+  opacity: 0.8;
+}
+.payment-box p{
+  color: rgb(54, 54, 54);
+  font-weight: bold;
+  font-size: 18px;
+}
+.submitOrder{
+  margin: auto;
+  padding: 10px 30px;
+  font-size: 18px;
+  color: white ;
+  font-weight: bold;
+  background-color: rgb(63, 170, 63);
+  border: none;
+  border-radius: 10px;
+}
+@media (max-width:1000px){
+  form{
+    grid-template-columns: 1fr;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 500px;
+  }
+  .payment-box{
+    max-width: 100%;
+    width: max-content;
+   
+    
+  }
+  input{
+    width: 80%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .payment-summary {
+    /* grid-row: 1 means this element will be placed into row
+      1 in the grid. (Normally, the row that an element is
+      placed in is determined by the order of the elements in
+      the HTML. grid-row overrides this default ordering). */
+    grid-row: 1;
+    margin-bottom: 12px;
+  }
+}
+
+.delivery-date {
+  color: rgb(0, 118, 0);
+  font-weight: 700;
+  font-size: 19px;
+  margin-top: 5px;
+  margin-bottom: 22px;
+}
+
+.cart-item-details-grid {
+  display: grid;
+  /* 100px 1fr 1fr; means the 2nd and 3rd column will
+     take up half the remaining space in the grid
+     (they will divide up the remaining space evenly). */
+  grid-template-columns: 100px 1fr 1fr;
+  column-gap: 25px;
+}
+
+@media (max-width: 1000px) {
+  .cart-item-details-grid {
+    grid-template-columns: 100px 1fr;
+    row-gap: 30px;
+  }
+}
+
+.product-image {
+  max-width: 100%;
+  max-height: 120px;
+
+  /* margin-left: auto;
+     margin-right auto;
+     Is a trick for centering an element horizontally
+     without needing a container. */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product-name {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.product-price {
+  color: rgb(177, 39, 4);
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+
+.product-quantity .link-primary {
+  margin-left: 3px;
+  /* display: none; */
+  
+}
+
+.update-quantity-link{
+  cursor:pointer;
+  
+}
+.save-new-quantity{
+  display: none;
+  cursor: pointer;
+}
+.is-editing-quantity .save-new-quantity{
+  display: initial;
+}
+.update-quantity-link:hover{
+  color: rgb(199, 199, 21);
+}
+.update-quantity-input{
+  display: none;
+  width: 30px;
+  
+}
+.is-editing-quantity .update-quantity-input{
+  display: initial;
+}
+.is-editing-quantity .update-quantity-link{
+  display: none;
+}
+@media (max-width: 1000px) {
+  .delivery-options {
+    /* grid-column: 1 means this element will be placed
+       in column 1 in the grid. (Normally, the column that
+       an element is placed in is determined by the order
+       of the elements in the HTML. grid-column overrides
+       this default ordering).
+       
+       / span 2 means this element will take up 2 columns
+       in the grid (Normally, each element takes up 1
+       column in the grid). */
+    grid-column: 1 / span 2;
+  }
+}
+
+.delivery-options-title {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.delivery-option {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.delivery-option-input {
+  margin-left: 0px;
+  cursor: pointer;
+}
+
+.delivery-option-date {
+  color: rgb(0, 118, 0);
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.delivery-option-price {
+  color: rgb(120, 120, 120);
+  font-size: 15px;
+}
+
+.payment-summary-title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.payment-summary-row {
+  display: grid;
+  /* 1fr auto; means the width of the 2nd column will be
+     determined by the elements inside the column (auto).
+     The 1st column will take up the remaining space. */
+  grid-template-columns: 1fr auto;
+
+  font-size: 15px;
+  margin-bottom: 9px;
+}
+
+.payment-summary-money {
+  text-align: right;
+}
+
+.subtotal-row .payment-summary-money {
+  border-top: 1px solid rgb(222, 222, 222);
+}
+
+.subtotal-row div {
+  padding-top: 9px;
+}
+
+.total-row {
+  color: rgb(177, 39, 4);
+  font-weight: 700;
+  font-size: 18px;
+
+  border-top: 1px solid rgb(222, 222, 222);
+  padding-top: 18px;
+}
+
+.place-order-button {
+  width: 100%;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 8px;
+
+  margin-top: 11px;
+  margin-bottom: 15px;
+}
